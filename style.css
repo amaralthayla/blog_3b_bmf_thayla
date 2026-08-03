@@ -13,6 +13,9 @@ body{
 
 }
 header{
-    background-color: vare(--cor-primaria);
+    background-color: var(--cor-primaria);
     color: var(--cor-contaste)
+    text-align: center;
+    margin: 0 auto;
+    padding:16px
 }
