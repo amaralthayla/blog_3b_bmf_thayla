@@ -3,7 +3,7 @@
     --cor-secundaria: #7E57C2;
     --cor-fundo: #F8F7FC;
     --cor-texto: #ffffff;
-    --cor-contraste: #00E3FF;
+    --cor-contraste: #FCFF2E;
     --cor-botao: #8E24AA;
     
 }
@@ -14,7 +14,7 @@ body{
 }
 header{
     background-color: var(--cor-primaria);
-    color: var(--cor-contaste);
+    color: var(--cor-contraste);
     text-align: center;
     margin: 0 auto;
     padding:16px;
