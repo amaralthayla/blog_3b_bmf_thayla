@@ -86,3 +86,57 @@ article:hover {
 article {
     animation: aparecerEEntrar 0.8s ease-out forwards;
 }
+/* ==========================================================================
+   1. ANIMAÇÃO DO HEADER (Gradiente dinâmico em movimento)
+   ========================================================================== */
+header {
+    /* Define um gradiente longo com os tons de roxo do seu projeto */
+    background: linear-gradient(-45deg, #6b0fe4, #7E57C2, #8E24AA, #4a07a0);
+    background-size: 400% 400%;
+    /* Ativa a animação contínua de 12 segundos */
+    animation: moverGradiente 12s ease infinite;
+}
+
+@keyframes moverGradiente {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==========================================================================
+   2. ANIMAÇÃO DA IMAGEM (Zoom sutil dentro do Card)
+   ========================================================================== */
+article {
+    /* Oculta qualquer parte da imagem que tente "vazar" ao crescer */
+    overflow: hidden; 
+}
+
+img {
+    /* Garante que o efeito de zoom aconteça de maneira suave e não brusca */
+    transition: transform 0.4s ease-in-out; 
+}
+
+/* Quando o usuário passar o mouse no CARD, a imagem aumenta 6% */
+article:hover img {
+    transform: scale(1.06); 
+}
+
+/* ==========================================================================
+   3. ANIMAÇÃO DOS BOTÕES (Efeito 'Pop' e troca de fundo nas curtidas)
+   ========================================================================== */
+button {
+    cursor: pointer;
+    border: 1px solid var(--cor-contraste);
+    background-color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    /* Suaviza tanto o crescimento quanto a mudança de cor do fundo */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
+}
+
+/* Quando o usuário passar o mouse diretamente no botão */
+button:hover {
+    transform: scale(1.15); /* Dá o salto ('pop') expandindo 15% */
+    background-color: var(--cor-contraste); /* Usa o lilás claro do seu :root */
+    box-shadow: 0 4px 10px rgba(107, 15, 228, 0.25); /* Adiciona uma sombra leve */
+}
