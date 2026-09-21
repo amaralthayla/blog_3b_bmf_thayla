@@ -1,121 +1,43 @@
-:root{
+/* ATENÇÃO: Esta linha IMPORTA a nova fonte do título e TEM que ser a primeira do arquivo! */
+@import url('https://googleapis.com');
+
+:root {
     --cor-primaria: #6b0fe4;
     --cor-secundaria: #7E57C2;
     --cor-fundo: #F8F7FC;
     --cor-texto: #ffffff;
     --cor-contraste: #edd7ff;
     --cor-botao: #8E24AA;
-    
 }
-body{
+
+body {
     max-width: 100vw;
+    margin: 0; /* Remove margens padrões do navegador */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-header{
-    background-color: var(--cor-primaria);
-    color: var(--cor-contraste);
-    text-align: center;
-    margin: 0 auto;
-    padding:16px;
 }
 
-main{
-    background-color: var(--cor-fundo);
-    color: var(--cor-primaria);
-    margin: 0auto;
-    padding: 16px;
-    display: flex;
-    flex-wrap: wrap;
-}
-article {
-    display: flex;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 16px;
-    gap: 16px;
-    flex: 1 1 25%;
-    flex-direction: column;
-    text-align: left;
-    background-color: #ffffff; 
-    border-radius: 12px;
-    padding: 16px 0; /* Adiciona espaçamento em cima e embaixo */
-    transition: all 0.3s ease;
-}
-
-/* EFEITO AO PASSAR O MOUSE (Mantido!) */
-article:hover {
-    transform: translateY(-5px);
-    box-shadow: 4px 4px 20px rgba(107, 15, 228, 0.4);
-}
-
-/* NOVO TAMANHO DAS IMAGENS: Médio e elegante */
-img {
-    width: 85%; /* Não ocupa toda a largura, deixando uma margem lateral */
-    height: 140px; /* Altura média perfeita */
-    object-fit: cover;
-    border-radius: 8px; /* Borda arredondada própria para a imagem */
-    margin: 0 auto; /* Centraliza a imagem no topo do card */
-}
-
-/* Espaçamento para o texto */
-article div {
-    padding: 0 16px;
-}
-
-}
-
-}
-article:hover {
-    transform: translateY(-5px); /* Faz o card subir levemente */
-    box-shadow: 4px 4px 20px rgba(107, 15, 228, 0.4); /* Deixa a sombra mais forte e roxa */
-    transition: all 0.3s ease; /* Faz o efeito acontecer de forma suave */
-}
-/* 1. Criando a animação de entrada */
-@keyframes aparecerEEntrar {
-    from {
-        opacity: 0;
-        transform: translateY(30px); /* Começa 30px abaixo */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* Termina na posição normal */
-    }
-}
-
-/* 2. Aplicando a animação nos cards */
-article {
-    animation: aparecerEEntrar 0.8s ease-out forwards;
-}
 /* ==========================================================================
-   1. ANIMAÇÃO DO HEADER (Gradiente dinâmico em movimento)
+   1. CABEÇALHO ATRAENTE COM NOVA FONTE E GRADIENTE ANIMADO
    ========================================================================== */
-header {
-  /* Importando uma fonte moderna e marcante (Montserrat) diretamente do Google Fonts */
-@import url('https://googleapis.com');
-
 header {
     background: linear-gradient(-45deg, #6b0fe4, #7E57C2, #8E24AA, #4a07a0);
     background-size: 400% 400%;
     animation: moverGradiente 12s ease infinite;
-    padding: 32px 16px; /* Aumentou o espaçamento para dar mais destaque */
+    padding: 32px 16px; 
     text-align: center;
 }
 
-/* ESTILIZAÇÃO DO TÍTULO PRINCIPAL */
 header h1 {
-    font-family: 'Montserrat', sans-serif; /* Fonte geométrica e robusta */
+    font-family: 'Montserrat', sans-serif; /* Nova fonte moderna aplicada aqui */
     font-weight: 800;
-    font-size: 2.5rem; /* Tamanho maior e imponente */
-    letter-spacing: -1px; /* Letras levemente mais juntas para visual moderno */
+    font-size: 2.5rem; 
+    letter-spacing: -1px; 
     color: #ffffff;
-    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra que destaca o texto do fundo */
-    margin-bottom: 8px;
-    
-    /* Efeito sutil de pulso para chamar atenção */
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3); 
+    margin: 0 0 8px 0;
     animation: pulsoTitulo 3s ease-in-out infinite alternate;
 }
 
-/* ESTILIZAÇÃO DO SUBTÍTULO */
 header p {
     font-size: 1.1rem;
     color: var(--cor-contraste);
@@ -124,40 +46,69 @@ header p {
     margin: 0 auto;
 }
 
-/* Animação suave para o título */
-@keyframes pulsoTitulo {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.02); }
-}
-
-}
-
-@keyframes moverGradiente {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* ==========================================================================
+   2. CONTEÚDO PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
+    margin: 0 auto; /* Corrigido o erro de digitação original */
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* ==========================================================================
-   2. ANIMAÇÃO DA IMAGEM (Zoom sutil dentro do Card)
+   3. CARDS ELABORADOS COM ANIMAÇÃO DE ENTRADA
    ========================================================================== */
 article {
-    /* Oculta qualquer parte da imagem que tente "vazar" ao crescer */
-    overflow: hidden; 
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+    gap: 16px;
+    flex: 1 1 25%;
+    flex-direction: column;
+    text-align: left; /* Alinhado à esquerda para leitura confortável */
+    background-color: #ffffff; 
+    border-radius: 12px;
+    overflow: hidden; /* Importante para o zoom da imagem não vazar */
+    padding-bottom: 16px; 
+    
+    /* Animação 4: Deslizar de baixo para cima ao carregar o site */
+    animation: aparecerEEntrar 0.8s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito ao passar o mouse no CARD todo */
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 20px rgba(107, 15, 228, 0.4);
+}
+
+/* ==========================================================================
+   4. IMAGENS CONFIGURADAS NO TAMANHO MÉDIO E COM ZOOM
+   ========================================================================== */
 img {
-    /* Garante que o efeito de zoom aconteça de maneira suave e não brusca */
-    transition: transform 0.4s ease-in-out; 
+    width: 85%; /* Tamanho médio elegante */
+    height: 140px; 
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 16px auto 0 auto; /* Centraliza no topo com espaçamento */
+    transition: transform 0.4s ease-in-out; /* Suaviza o zoom */
 }
 
-/* Quando o usuário passar o mouse no CARD, a imagem aumenta 6% */
+/* Animação: Zoom sutil na imagem ao passar o mouse no card */
 article:hover img {
     transform: scale(1.06); 
 }
 
+/* Espaçamento interno para os textos do card */
+article div {
+    padding: 0 16px;
+}
+
 /* ==========================================================================
-   3. ANIMAÇÃO DOS BOTÕES (Efeito 'Pop' e troca de fundo nas curtidas)
+   5. BOTÕES COM ANIMAÇÃO DO EFEITO POP
    ========================================================================== */
 button {
     cursor: pointer;
@@ -165,13 +116,38 @@ button {
     background-color: #ffffff;
     padding: 6px 14px;
     border-radius: 20px;
-    /* Suaviza tanto o crescimento quanto a mudança de cor do fundo */
+    margin-right: 8px;
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
 }
 
-/* Quando o usuário passar o mouse diretamente no botão */
 button:hover {
-    transform: scale(1.15); /* Dá o salto ('pop') expandindo 15% */
-    background-color: var(--cor-contraste); /* Usa o lilás claro do seu :root */
-    box-shadow: 0 4px 10px rgba(107, 15, 228, 0.25); /* Adiciona uma sombra leve */
+    transform: scale(1.15); /* Efeito Pop */
+    background-color: var(--cor-contraste); 
+    box-shadow: 0 4px 10px rgba(107, 15, 228, 0.25); 
 }
+
+/* ==========================================================================
+   ANIMAÇÕES (@keyframes)
+   ========================================================================== */
+@keyframes moverGradiente {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulsoTitulo {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
+}
+
+@keyframes aparecerEEntrar {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
