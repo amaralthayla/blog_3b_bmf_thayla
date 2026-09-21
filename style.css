@@ -1,4 +1,4 @@
-/* ATENÇÃO: Esta linha IMPORTA a nova fonte do título e TEM que ser a primeira do arquivo! */
+/* IMPORTANTE: A linha de importação da fonte deve ser a primeira do arquivo */
 @import url('https://googleapis.com');
 
 :root {
@@ -12,12 +12,12 @@
 
 body {
     max-width: 100vw;
-    margin: 0; /* Remove margens padrões do navegador */
+    margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* ==========================================================================
-   1. CABEÇALHO ATRAENTE COM NOVA FONTE E GRADIENTE ANIMADO
+   1. ANIMAÇÃO DO HEADER (Gradiente dinâmico em movimento e Nova Fonte)
    ========================================================================== */
 header {
     background: linear-gradient(-45deg, #6b0fe4, #7E57C2, #8E24AA, #4a07a0);
@@ -28,7 +28,7 @@ header {
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif; /* Nova fonte moderna aplicada aqui */
+    font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     font-size: 2.5rem; 
     letter-spacing: -1px; 
@@ -47,20 +47,50 @@ header p {
 }
 
 /* ==========================================================================
-   2. CONTEÚDO PRINCIPAL (MAIN)
+   2. BOTÕES DE FILTRO POR CATEGORIA
+   ========================================================================== */
+.filtros-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 16px 0 16px;
+    background-color: var(--cor-fundo);
+}
+
+.btn-filtro {
+    background-color: #ffffff;
+    border: 2px solid var(--cor-contraste);
+    color: var(--cor-primaria);
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro.active, .btn-filtro:hover {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    border-color: var(--cor-primaria);
+}
+
+/* Esconde os artigos que não pertencem à categoria selecionada */
+article.escondido {
+    display: none !important;
+}
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (MAIN) E CARDS ELABORADOS
    ========================================================================== */
 main {
     background-color: var(--cor-fundo);
     color: var(--cor-primaria);
-    margin: 0 auto; /* Corrigido o erro de digitação original */
+    margin: 0 auto;
     padding: 16px;
     display: flex;
     flex-wrap: wrap;
 }
 
-/* ==========================================================================
-   3. CARDS ELABORADOS COM ANIMAÇÃO DE ENTRADA
-   ========================================================================== */
 article {
     display: flex;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -74,7 +104,7 @@ article {
     overflow: hidden; /* Importante para o zoom da imagem não vazar */
     padding-bottom: 16px; 
     
-    /* Animação 4: Deslizar de baixo para cima ao carregar o site */
+    /* Animação: Deslizar de baixo para cima ao carregar o site */
     animation: aparecerEEntrar 0.8s ease-out forwards;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -107,10 +137,19 @@ article div {
     padding: 0 16px;
 }
 
+/* Texto dinâmico do tempo de leitura */
+.tempo-leitura {
+    font-size: 12px;
+    color: var(--cor-secundaria);
+    font-style: italic;
+    margin-top: 10px;
+    display: block;
+}
+
 /* ==========================================================================
    5. BOTÕES COM ANIMAÇÃO DO EFEITO POP
    ========================================================================== */
-button {
+button:not(.btn-filtro) {
     cursor: pointer;
     border: 1px solid var(--cor-contraste);
     background-color: #ffffff;
@@ -120,10 +159,52 @@ button {
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
 }
 
-button:hover {
+button:not(.btn-filtro):hover {
     transform: scale(1.15); /* Efeito Pop */
     background-color: var(--cor-contraste); 
     box-shadow: 0 4px 10px rgba(107, 15, 228, 0.25); 
+}
+
+/* Botão voltar ao topo flutuante */
+#btn-topo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--cor-botao);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none; /* Começa escondido, o JS ativa depois */
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+#btn-topo:hover {
+    transform: scale(1.1);
+    background-color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE (Ajuste para Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    main {
+        padding: 8px;
+    }
+    article {
+        flex: 1 1 100%;
+        margin: 12px 0;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
 }
 
 /* ==========================================================================
@@ -150,21 +231,5 @@ button:hover {
         transform: translateY(0);
     }
 }
-/* ==========================================================================
-   6. RESPONSIVIDADE (Ajuste para Celulares)
-   ========================================================================== */
-@media (max-width: 768px) {
-    main {
-        padding: 8px; /* Reduz o espaço das bordas no celular */
-    }
 
-    article {
-        flex: 1 1 100%; /* Força cada card a ocupar a largura total da tela */
-        margin: 12px 0;  /* Ajusta o espaçamento entre os cards empilhados */
-    }
-
-    header h1 {
-        font-size: 1.8rem; /* Diminui o título para não quebrar muitas linhas */
-    }
-}
 
