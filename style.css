@@ -70,3 +70,19 @@ article:hover {
     box-shadow: 4px 4px 20px rgba(107, 15, 228, 0.4); /* Deixa a sombra mais forte e roxa */
     transition: all 0.3s ease; /* Faz o efeito acontecer de forma suave */
 }
+/* 1. Criando a animação de entrada */
+@keyframes aparecerEEntrar {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Começa 30px abaixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina na posição normal */
+    }
+}
+
+/* 2. Aplicando a animação nos cards */
+article {
+    animation: aparecerEEntrar 0.8s ease-out forwards;
+}
