@@ -90,11 +90,46 @@ article {
    1. ANIMAÇÃO DO HEADER (Gradiente dinâmico em movimento)
    ========================================================================== */
 header {
-    /* Define um gradiente longo com os tons de roxo do seu projeto */
+  /* Importando uma fonte moderna e marcante (Montserrat) diretamente do Google Fonts */
+@import url('https://googleapis.com');
+
+header {
     background: linear-gradient(-45deg, #6b0fe4, #7E57C2, #8E24AA, #4a07a0);
     background-size: 400% 400%;
-    /* Ativa a animação contínua de 12 segundos */
     animation: moverGradiente 12s ease infinite;
+    padding: 32px 16px; /* Aumentou o espaçamento para dar mais destaque */
+    text-align: center;
+}
+
+/* ESTILIZAÇÃO DO TÍTULO PRINCIPAL */
+header h1 {
+    font-family: 'Montserrat', sans-serif; /* Fonte geométrica e robusta */
+    font-weight: 800;
+    font-size: 2.5rem; /* Tamanho maior e imponente */
+    letter-spacing: -1px; /* Letras levemente mais juntas para visual moderno */
+    color: #ffffff;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra que destaca o texto do fundo */
+    margin-bottom: 8px;
+    
+    /* Efeito sutil de pulso para chamar atenção */
+    animation: pulsoTitulo 3s ease-in-out infinite alternate;
+}
+
+/* ESTILIZAÇÃO DO SUBTÍTULO */
+header p {
+    font-size: 1.1rem;
+    color: var(--cor-contraste);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Animação suave para o título */
+@keyframes pulsoTitulo {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
+}
+
 }
 
 @keyframes moverGradiente {
