@@ -44,3 +44,8 @@ img{
     width: 80px;
     height: 80px;
 }
+article:hover {
+    transform: translateY(-5px); /* Faz o card subir levemente */
+    box-shadow: 4px 4px 20px rgba(107, 15, 228, 0.4); /* Deixa a sombra mais forte e roxa */
+    transition: all 0.3s ease; /* Faz o efeito acontecer de forma suave */
+}
