@@ -30,27 +30,38 @@ main{
 }
 article {
     display: flex;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave e moderna */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 16px;
     gap: 16px;
     flex: 1 1 25%;
     flex-direction: column;
-    text-align: left; /* Alinhamento à esquerda para melhorar a leitura */
-    background-color: #ffffff; /* Fundo branco para destacar o texto */
-    border-radius: 12px; /* Bordas arredondadas nos cards */
-    overflow: hidden; /* Garante que a imagem respeite o arredondado da borda */
-    padding-bottom: 16px; /* Espaço na parte inferior interna */
+    text-align: left;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    padding: 16px 0; /* Adiciona espaçamento em cima e embaixo */
+    transition: all 0.3s ease;
 }
 
+/* EFEITO AO PASSAR O MOUSE (Mantido!) */
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 20px rgba(107, 15, 228, 0.4);
+}
+
+/* NOVO TAMANHO DAS IMAGENS: Médio e elegante */
 img {
-    width: 100%; /* Imagem passa a ocupar toda a largura do card */
-    height: 200px; /* Altura fixa ideal para fotos de notícias */
-    object-fit: cover; /* Recorta a imagem proporcionalmente sem distorcer */
+    width: 85%; /* Não ocupa toda a largura, deixando uma margem lateral */
+    height: 140px; /* Altura média perfeita */
+    object-fit: cover;
+    border-radius: 8px; /* Borda arredondada própria para a imagem */
+    margin: 0 auto; /* Centraliza a imagem no topo do card */
 }
 
-/* Garante que os textos e botões tenham um recuo nas laterais */
+/* Espaçamento para o texto */
 article div {
     padding: 0 16px;
+}
+
 }
 
 }
