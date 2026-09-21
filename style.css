@@ -150,4 +150,21 @@ button:hover {
         transform: translateY(0);
     }
 }
+/* ==========================================================================
+   6. RESPONSIVIDADE (Ajuste para Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    main {
+        padding: 8px; /* Reduz o espaço das bordas no celular */
+    }
+
+    article {
+        flex: 1 1 100%; /* Força cada card a ocupar a largura total da tela */
+        margin: 12px 0;  /* Ajusta o espaçamento entre os cards empilhados */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Diminui o título para não quebrar muitas linhas */
+    }
+}
 
