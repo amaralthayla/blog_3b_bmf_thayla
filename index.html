@@ -152,6 +152,46 @@
 </div>
 
 </article>
+<!-- Cole este bloco de botões de filtro LOGO ANTES da tag <main> -->
+<div class="filtros-container">
+    <button class="btn-filtro active" data-categoria="todos">Todos</button>
+    <button class="btn-filtro" data-categoria="eventos">🎉 Eventos</button>
+    <button class="btn-filtro" data-categoria="estudos">🎓 Estudos</button>
+    <button class="btn-filtro" data-categoria="esportes">🏆 Esportes</button>
+</div>
+
+<main>
+<!-- Adicione o atributo data-categoria em cada tag <article> correspondente, como nos exemplos abaixo: -->
+<article data-categoria="eventos">
+    <img src=" img/imagem1.png" alt=" informações sobre minha imagem ">
+    <div>
+        <h2> Contagem Regressiva: A Festa Junina 2026 promete entregar absolutamente tudo! 🔥 </h2>
+        <!-- O restante do conteúdo do seu artigo continua igual... -->
+        <!-- O JavaScript vai injetar o tempo de leitura automaticamente aqui no final -->
+    </div>
+</article>
+
+<article data-categoria="estudos">
+    <img src=" img/imagem2.png" alt=" informações sobre minha imagem ">
+    <div>
+        <h2> O papel estratégico dos simulados na jornada rumo à universidade 🎓 </h2>
+        <!-- Conteúdo do artigo... -->
+    </div>
+</article>
+
+<article data-categoria="esportes">
+    <img src=" img/imagem4.png" alt=" Jogos Interclasses ">
+    <div>
+        <h2> 🏆 Jogos Interclasses 2026 </h2>
+        <!-- Conteúdo do artigo... -->
+    </div>
+</article>
+
+<!-- Faça o mesmo adicionando data-categoria="estudos" ou "eventos" nos outros artigos -->
+</main>
+
+<!-- BOTÃO VOLTAR AO TOPO (Cole logo antes de fechar a tag </body>) -->
+<button id="btn-topo" title="Voltar ao Topo">⬆️</button>
 
 </main>
 
